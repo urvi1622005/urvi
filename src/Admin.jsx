@@ -1,24 +1,24 @@
-import React,{useState } from 'React';
-const User() {
+import React,{useState } from 'react';
+const User = ()=>{
     return (
         <div> <h1> welcome user</h1></div>
     );
 }
-const Admin() {
+const Admin =()=> {
     return (
         <div>
             <h1> welcome admin </h1>
         </div>
     );
 }
-const App() {
+const App=()=> {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
     const [isAdmin, setIsAdmin] = useState(false);
 
 
-}
+
  const handleLogin = () => {
 <button onClick={handleLogin}>Login</button>
     if (username === 'user' && password === 'userpassword') {
@@ -33,5 +33,27 @@ const App() {
     };
 
   
-
-export default App;
+  return (
+    <div className="App">
+      <header className="App-header">
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button onClick={handleLogin}>Login</button>
+        {loggedIn ? (
+          isAdmin ? <Admin /> : <User />
+        ) : null}
+      </header>
+    </div>
+  );
+                                                                                                 }                                                                         
+                                                                                                                         export default App;

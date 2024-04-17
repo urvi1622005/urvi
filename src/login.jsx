@@ -11,7 +11,7 @@ const Login = () => {
     const isAdminUser = userId === 'admin' && password === 'adminpassword';
     
     if (isAdminUser) {
-      // Redirect or set state indicating admin login
+      
       setIsAdmin(true);
     } else {
       // Handle regular user login
